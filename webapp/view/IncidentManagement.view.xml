@@ -16,13 +16,13 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{IncidentId}" />
-                            <Text text="{Plant}" />
-                            <Text text="{IncidentDescription}" />
-                            <Text text="{IncidentCategory}" />
-                            <Text text="{IncidentPriority}" />
-                            <Text text="{IncidentStatus}" />
-                            <Text text="{path: 'IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
+                            <Text text="{incidentModel>IncidentId}" />
+                            <Text text="{incidentModel>Plant}" />
+                            <Text text="{incidentModel>IncidentDescription}" />
+                            <Text text="{incidentModel>IncidentCategory}" />
+                            <Text text="{incidentModel>IncidentPriority}" />
+                            <Text text="{incidentModel>IncidentStatus}" />
+                            <Text text="{path: 'incidentModel>IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
                         </cells>
                     </ColumnListItem>
                 </items>

@@ -25,7 +25,15 @@ sap.ui.define([
                 oModel.read("/incidentSet", {
                     filters: [new Filter("EmployeeId", FilterOperator.EQ, "00000001")],
                     success: function (oData) {
-                        var oJsonModel = new JSONModel(oData);
+                        // Robustly handle response: check for results array or use data directly
+                        var aResults = (oData && oData.results) ? oData.results : oData;
+
+                        // Ensure it's an array
+                        if (!Array.isArray(aResults)) {
+                            aResults = [aResults];
+                        }
+
+                        var oJsonModel = new JSONModel({ results: aResults });
                         that.getView().setModel(oJsonModel, "incidentModel");
                     },
                     error: function (oError) {

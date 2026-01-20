@@ -17,14 +17,14 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{RiskId}" />
-                            <Text text="{Plant}" />
-                            <Text text="{RiskDescription}" />
-                            <Text text="{RiskCategory}" />
-                            <Text text="{RiskSeverity}" />
-                            <Text text="{MitigationMeasures}" />
-                            <Text text="{Likelihood}" />
-                            <Text text="{path: 'RiskIdentificationDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
+                            <Text text="{riskModel>RiskId}" />
+                            <Text text="{riskModel>Plant}" />
+                            <Text text="{riskModel>RiskDescription}" />
+                            <Text text="{riskModel>RiskCategory}" />
+                            <Text text="{riskModel>RiskSeverity}" />
+                            <Text text="{riskModel>MitigationMeasures}" />
+                            <Text text="{riskModel>Likelihood}" />
+                            <Text text="{path: 'riskModel>RiskIdentificationDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
                         </cells>
                     </ColumnListItem>
                 </items>
