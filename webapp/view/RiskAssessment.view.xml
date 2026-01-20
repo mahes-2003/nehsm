@@ -3,10 +3,7 @@
     xmlns="sap.m">
     <Page id="page" title="Risk Assessment" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Table id="riskTable" inset="false" items="{
-                path: '/RISKSet',
-                filters: [{path: 'EmployeeId', operator: 'EQ', value1: '00000001'}]
-            }">
+            <Table id="riskTable" inset="false" items="{riskModel>/results}">
                 <columns>
                     <Column><Text text="Risk ID" /></Column>
                     <Column><Text text="Plant" /></Column>

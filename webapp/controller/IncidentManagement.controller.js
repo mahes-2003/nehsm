@@ -1,16 +1,37 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/routing/History"
+    "sap/ui/core/routing/History",
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, History) {
+    function (Controller, History, JSONModel, Filter, FilterOperator) {
         "use strict";
 
         return Controller.extend("com.kaar.ehsmportal.controller.IncidentManagement", {
             onInit: function () {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.getRoute("RouteIncidentManagement").attachPatternMatched(this._onObjectMatched, this);
+            },
 
+            _onObjectMatched: function () {
+                var oModel = this.getOwnerComponent().getModel();
+                var that = this;
+
+                // Fetch data manually to bypass ODataModel key issues
+                oModel.read("/incidentSet", {
+                    filters: [new Filter("EmployeeId", FilterOperator.EQ, "00000001")],
+                    success: function (oData) {
+                        var oJsonModel = new JSONModel(oData);
+                        that.getView().setModel(oJsonModel, "incidentModel");
+                    },
+                    error: function (oError) {
+                        // Handle error
+                    }
+                });
             },
 
             onNavBack: function () {

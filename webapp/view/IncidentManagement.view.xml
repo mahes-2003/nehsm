@@ -3,10 +3,7 @@
     xmlns="sap.m">
     <Page id="page" title="Incident Management" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Table id="incidentTable" inset="false" items="{
-                path: '/incidentSet',
-                filters: [{path: 'EmployeeId', operator: 'EQ', value1: '00000001'}]
-            }">
+            <Table id="incidentTable" inset="false" items="{incidentModel>/results}">
                 <columns>
                     <Column><Text text="Incident ID" /></Column>
                     <Column><Text text="Plant" /></Column>
@@ -15,7 +12,6 @@
                     <Column><Text text="Priority" /></Column>
                     <Column><Text text="Status" /></Column>
                     <Column><Text text="Date" /></Column>
-                    <Column><Text text="Created By" /></Column>
                 </columns>
                 <items>
                     <ColumnListItem>
@@ -27,7 +23,6 @@
                             <Text text="{IncidentPriority}" />
                             <Text text="{IncidentStatus}" />
                             <Text text="{path: 'IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
-                            <Text text="{CreatedBy}" />
                         </cells>
                     </ColumnListItem>
                 </items>
