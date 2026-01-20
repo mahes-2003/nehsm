@@ -1,0 +1,23 @@
+<mvc:View controllerName="com.kaar.ehsmportal.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+    <Page id="page" title="Safety Engineer Dashboard">
+        <content>
+            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                <l:HorizontalLayout class="sapUiContentPadding">
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Risk Assessment" subheader="Review Risks" press="onPressRisk">
+                        <TileContent>
+                            <ImageContent src="sap-icon://alert" />
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Incident Management" subheader="Track Incidents" press="onPressIncident">
+                        <TileContent>
+                            <ImageContent src="sap-icon://incident" />
+                        </TileContent>
+                    </GenericTile>
+                </l:HorizontalLayout>
+            </l:VerticalLayout>
+        </content>
+    </Page>
+</mvc:View>

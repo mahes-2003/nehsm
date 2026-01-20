@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.kaar.ehsmportal.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox class="sapUiSmallMargin" alignItems="Center" justifyContent="Center" height="100%">
+                <items>
+                    <Panel width="400px" headerText="Safety Engineer Login" class="sapUiResponsiveMargin">
+                        <content>
+                            <f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+                                <f:content>
+                                    <Label text="Employee ID" />
+                                    <Input id="empIdInput" placeholder="Enter Employee ID" />
+                                    <Label text="Password" />
+                                    <Input id="passwordInput" type="Password" placeholder="Enter Password" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <Button text="Login" type="Emphasized" press="onLogin" class="sapUiSmallMarginTop" width="100%" />
+                        </content>
+                    </Panel>
+                </items>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
