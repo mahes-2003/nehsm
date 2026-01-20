@@ -15,7 +15,6 @@
                     <Column><Text text="Severity" /></Column>
                     <Column><Text text="Mitigation" /></Column>
                     <Column><Text text="Likelihood" /></Column>
-                    <Column><Text text="Created By" /></Column>
                     <Column><Text text="Date" /></Column>
                 </columns>
                 <items>
@@ -28,7 +27,6 @@
                             <Text text="{RiskSeverity}" />
                             <Text text="{MitigationMeasures}" />
                             <Text text="{Likelihood}" />
-                            <Text text="{CreatedBy}" />
                             <Text text="{path: 'RiskIdentificationDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" />
                         </cells>
                     </ColumnListItem>
