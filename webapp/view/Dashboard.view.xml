@@ -3,6 +3,9 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout">
     <Page id="page" title="Safety Engineer Dashboard">
+        <headerContent>
+            <Button icon="sap-icon://log" press="onLogout" tooltip="Logout" />
+        </headerContent>
         <content>
             <l:VerticalLayout class="sapUiContentPadding" width="100%">
                 <l:HorizontalLayout class="sapUiContentPadding">

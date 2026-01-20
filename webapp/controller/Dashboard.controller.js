@@ -20,6 +20,11 @@ sap.ui.define([
             onPressIncident: function () {
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("RouteIncidentManagement");
+            },
+
+            onLogout: function () {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("RouteLogin");
             }
         });
     });
